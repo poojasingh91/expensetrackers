@@ -1,0 +1,35 @@
+<%= simple_form_for Expense.new do |f| %>
+    <%= f.input :title %>
+    <%= f.input :amount %>
+    <%= f.input :date %>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+
+<% @expenses.each do |expense| %>
+<div class="card">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+        <p><%= expense.title %> </p>
+        <p><%= expense.amount %> </p>
+        <p><%= expense.date %> </p>
+    </blockquote>
+    </div>
+    </div>
+<% end %>
+
+<% @expenses.each do |expense| %>
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p><%= expense.title %> </p>
+            <p><%= expense.amount %> </p>
+            
+          <footer class="blockquote-footer">by <%= expense.date %></footer>
+        </blockquote>
+        <div class="btn-group" role="group">
+        <%= link_to 'Delete', expense_path(expense), class: 'btn btn-sm btn-danger', data: {"turbo-confirm": "Are you sure?", "turbo-method": :delete}%>
+        <%= link_to 'Edit', edit_expense_path(expense), class: 'btn btn-sm btn-success' %>
+        </div>
+      </div>
+    </div>
+  <% end %>

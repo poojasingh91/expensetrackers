@@ -1,0 +1,37 @@
+$main-blue: #337ab7;
+$footer-height: 45px;
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Dosis', sans-serif;
+$brand-font: 'Pacifico';
+.navbar-default {
+    font-family: $secondary-font;
+  }
+  .navbar {
+    font-family: $secondary-font;
+    background-color: white;
+  }
+  .navbar .navbar-brand {
+    font-family: $brand-font;
+    font-weight: 100;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #337ab7;
+  }
+html, body {
+    font-family: $primary-font;
+    height: 100%
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -$footer-height;
+    /* Pad bottom by footer height */
+    padding: 0 0 $footer-height;
+  }
+  
+  /* Set the fixed height of the footer here */
+  .footer {
+    height: $footer-height;
+  }
