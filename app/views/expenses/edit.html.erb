@@ -1,0 +1,8 @@
+<h1>Edit Expense</h1>
+
+<%= simple_form_for @expense, method: :patch do |f| %>
+<%= f. input :title %>
+    <%= f.input :amount %>
+    <%= f.input :date %>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
